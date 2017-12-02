@@ -1,3 +1,11 @@
-<p>
-  spectator-page works!
-</p>
+<mat-card>
+  <mat-card-subtitle>
+    Guess what's being drawn!
+  </mat-card-subtitle>
+  <mat-card-content>
+    <app-drawing-canvas></app-drawing-canvas>
+  </mat-card-content>
+  <mat-card-subtitle *ngIf="gameState != null && gameState.player != null">
+    It's {{ gameState.player.username }}'s turn with {{ gameState.ink }} ink remaining
+  </mat-card-subtitle>
+</mat-card>

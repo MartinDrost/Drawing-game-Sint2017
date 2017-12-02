@@ -12,11 +12,9 @@ export class GameRoutes {
      */
     public static create(router: Router) {
         // log
-        console.log("[IndexRoute::create] Creating tweet routes.");
+        console.log("[IndexRoute::create] Creating game routes.");
 
         //add home page route
         router.post("/game/join", gameController.joinGame);
     }
-
-
 }

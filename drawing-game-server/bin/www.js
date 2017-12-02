@@ -24,6 +24,11 @@ httpServer.on("error", onError);
 httpServer.on("listening", onListening);
 
 
+var socketService = require("../dist/src/services/SocketService");
+socketService.socketService.registerApp(httpServer);
+socketService.socketService.listen(+process.env.SOCKET_PORT || 8080);
+
+
 /**
  * Normalize a port into a number, string, or false.
  */

@@ -7,6 +7,7 @@ import errorHandler = require("errorhandler");
 import methodOverride = require("method-override");
 import cors = require('cors')
 import {GameRoutes} from "./routes/GameRoutes";
+import {socketService} from "./services/SocketService";
 
 /**
  * The server.
@@ -89,6 +90,7 @@ export class Server {
         // error handling
         //noinspection TypeScriptValidateTypes
         this.app.use(errorHandler());
+
     }
 
     /**

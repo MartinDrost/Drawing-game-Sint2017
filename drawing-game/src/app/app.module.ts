@@ -15,6 +15,10 @@ import {GameService} from "./services/game.service";
 import {HttpClientModule} from "@angular/common/http";
 import { ArtistPageComponent } from './pages/artist-page/artist-page.component';
 import { SpectatorPageComponent } from './pages/spectator-page/spectator-page.component';
+import {SocketService} from "./services/socket.service";
+import { DrawingCanvasComponent } from './components/drawing-canvas/drawing-canvas.component';
+import { DrawPageComponent } from './pages/draw-page/draw-page.component';
+import {AuthenticatedGuard} from "./guards/authenticated.guard";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { SpectatorPageComponent } from './pages/spectator-page/spectator-page.co
     FooterComponent,
     JoinGameFormComponent,
     ArtistPageComponent,
-    SpectatorPageComponent
+    SpectatorPageComponent,
+    DrawingCanvasComponent,
+    DrawPageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,7 @@ import { SpectatorPageComponent } from './pages/spectator-page/spectator-page.co
     MatInputModule,
     MatButtonModule
   ],
-  providers: [GameService],
+  providers: [GameService, SocketService, AuthenticatedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

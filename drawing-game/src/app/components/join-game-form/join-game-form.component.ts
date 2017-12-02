@@ -32,11 +32,7 @@ export class JoinGameFormComponent implements OnInit {
 
     this.gameService.joinGame(player).then(
       createdPlayer => {
-        if(createdPlayer.role == RoleEnum.Artist) {
-          this.router.navigate(['artist']);
-        } else if(createdPlayer.role == RoleEnum.Spectator) {
-          this.router.navigate(['spectator']);
-        }
+        this.router.navigate(['draw']);
       },
       error => {
         alert("Something went wrong");

@@ -1,3 +1,20 @@
-<p>
-  artist-page works!
-</p>
+<mat-card>
+  <mat-card-subtitle *ngIf="gameState != null ">
+    Draw <strong>{{ gameState.word }}</strong>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <app-drawing-canvas></app-drawing-canvas>
+  </mat-card-content>
+  <mat-card-subtitle *ngIf="gameState != null && gameState.player != null">
+    It's <strong>{{ gameState.player.username }}'s</strong> turn with <strong>{{ gameState.ink }}</strong> ink remaining
+  </mat-card-subtitle>
+</mat-card>
+
+
+<button mat-raised-button color="primary"(click)="nextRound()">
+  Next round
+</button>
+
+<button mat-raised-button color="primary"(click)="nextWord()">
+  Next word
+</button>
