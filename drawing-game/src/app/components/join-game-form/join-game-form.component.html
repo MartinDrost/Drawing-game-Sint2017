@@ -1,0 +1,15 @@
+<form class="participation-form" #f="ngForm" (ngSubmit)="submitForm(f)" #form>
+  <mat-form-field>
+    <input matInput placeholder="Enter your name" #userName ngModel [required]="true" name="username">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Select your role" #roleSelect ngModel [required]="true" name="roleSelect">
+      <mat-option value="0">Artist</mat-option>
+      <mat-option value="1">Spectator</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!f.valid">
+    Join game
+  </button>
+</form>
