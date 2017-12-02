@@ -11,6 +11,10 @@ import {MatCardModule, MatSelectModule, MatInputModule, MatButtonModule} from "@
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import { JoinGameFormComponent } from './components/join-game-form/join-game-form.component';
+import {GameService} from "./services/game.service";
+import {HttpClientModule} from "@angular/common/http";
+import { ArtistPageComponent } from './pages/artist-page/artist-page.component';
+import { SpectatorPageComponent } from './pages/spectator-page/spectator-page.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +22,13 @@ import { JoinGameFormComponent } from './components/join-game-form/join-game-for
     HomePageComponent,
     HeaderComponent,
     FooterComponent,
-    JoinGameFormComponent
+    JoinGameFormComponent,
+    ArtistPageComponent,
+    SpectatorPageComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     MatCardModule,
     MatSelectModule,
@@ -30,7 +37,7 @@ import { JoinGameFormComponent } from './components/join-game-form/join-game-for
     MatInputModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
