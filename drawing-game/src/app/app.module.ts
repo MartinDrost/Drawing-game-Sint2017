@@ -7,7 +7,7 @@ import {appRoutes} from "./app.routing";
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatCardModule, MatSelectModule, MatInputModule, MatButtonModule} from "@angular/material";
+import {MatCardModule, MatSelectModule, MatInputModule, MatButtonModule, MatProgressBarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import { JoinGameFormComponent } from './components/join-game-form/join-game-form.component';
@@ -41,7 +41,8 @@ import {AuthenticatedGuard} from "./guards/authenticated.guard";
     BrowserAnimationsModule,
     FormsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressBarModule
   ],
   providers: [GameService, SocketService, AuthenticatedGuard],
   bootstrap: [AppComponent]

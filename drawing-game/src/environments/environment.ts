@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  api: "http://localhost:8081",
-  socket: "http://localhost:8082"
+  api: "http://192.168.0.108:8081",
+  socket: "http://192.168.0.108:8082"
 };

@@ -127,7 +127,6 @@ export const socketService = new class SocketService {
     public removeSocket(socket: Socket): void {
         for(let i = 0, l = this.sockets.length; i < l; i++) {
             if(this.sockets[i].socket.id == socket.id) {
-                console.log(this.sockets[i]);
                 gameService.removePlayer(this.sockets[i].token);
                 this.sockets.splice(i, 1);
                 break;

@@ -8,13 +8,17 @@
   <mat-card-subtitle *ngIf="gameState != null && gameState.player != null">
     It's <strong>{{ gameState.player.username }}'s</strong> turn with <strong>{{ gameState.ink }}</strong> ink remaining
   </mat-card-subtitle>
+  <mat-card-subtitle *ngIf="gameState != null && gameState.player != null">
+    <mat-progress-bar mode="determinate" value="{{ gameState.ink }}"></mat-progress-bar>
+  </mat-card-subtitle>
 </mat-card>
 
+<div class="buttons" *ngIf="isAdmin()">
+  <button mat-raised-button color="primary"(click)="nextRound()">
+    Next round
+  </button>
 
-<button mat-raised-button color="primary"(click)="nextRound()">
-  Next round
-</button>
-
-<button mat-raised-button color="primary"(click)="nextWord()">
-  Next word
-</button>
+  <button mat-raised-button color="primary"(click)="nextWord()">
+    Next word
+  </button>
+</div>

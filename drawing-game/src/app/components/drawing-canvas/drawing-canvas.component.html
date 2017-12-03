@@ -1,8 +1,5 @@
-<button mat-raised-button color="primary"(click)="stroke()">
-  Stroke!
-</button>
+<canvas #canvas>
 
+</canvas>
 
-{{ gameState }}
-<br>
-{{ players }}
+<input *ngIf="isArtist()" type="color" [(ngModel)]="color">

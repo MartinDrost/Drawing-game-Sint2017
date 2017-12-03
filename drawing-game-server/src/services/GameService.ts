@@ -7,7 +7,7 @@ const TokenGenerator = require('uuid-token-generator');
 
 export const gameService = new class GameService {
 
-    private INK_PER_ROUND = 100;
+    private INK_PER_ROUND = 300;
 
     public players: IPlayer[] = [];
     private tokenGenerator: any;

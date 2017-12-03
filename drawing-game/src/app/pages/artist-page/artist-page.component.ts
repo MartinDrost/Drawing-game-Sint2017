@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SocketService} from "../../services/socket.service";
 import {IGameState} from "../../interfaces/IGameState";
+import {GameService} from "../../services/game.service";
 
 @Component({
   selector: 'app-artist-page',
@@ -13,7 +14,8 @@ export class ArtistPageComponent implements OnInit {
   public players: string[] = [];
 
   constructor(
-    private socketService: SocketService
+    private socketService: SocketService,
+    private gameService: GameService
   ) { }
 
   ngOnInit() {
@@ -33,4 +35,7 @@ export class ArtistPageComponent implements OnInit {
     this.socketService.nextRound(true);
   }
 
+  public isAdmin(): boolean {
+    return this.gameService.getSession().username == "MartinRoss";
+  }
 }
