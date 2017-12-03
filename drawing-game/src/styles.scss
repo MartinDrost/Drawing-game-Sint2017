@@ -1,4 +1,3 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./css-reset.css";
 
 body {
@@ -6,8 +5,33 @@ body {
   font-size: 14px;
   font-weight: 300;
   color: rgba(0,0,0,.87);
+  background: url("./assets/images/stefan.jpg");
+}
+
+@keyframes looping-background {
+  0%   { background-position: 0 0; }
+  100% { background-position: 100vw 0; }
+}
+body {
+  background-size: 20vw auto;
+  animation: looping-background 60s infinite linear;
 }
 
 strong {
   font-weight: 500;
+}
+
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+// import our custom theme
+@import 'sint-theme.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.my-theme {
+
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($theme);
 }

@@ -39,7 +39,7 @@ export class DrawingCanvasComponent implements OnInit {
     });
 
     this.canvas.width = 950;
-    this.canvas.height = 1000;
+    this.canvas.height = 600;
     this.handleResize();
   }
 
@@ -65,7 +65,6 @@ export class DrawingCanvasComponent implements OnInit {
   @HostListener('touchmove', ['$event'])
   @HostListener('mousemove', ['$event'])
   private addStroke(event: MouseEvent): void {
-    debugger;
     let isTouch = event.type == "touchmove";
     if(!isTouch && (this.gameState.player.token != this.gameService.getSession().token || event.which != 1)) {
       return;
@@ -75,8 +74,8 @@ export class DrawingCanvasComponent implements OnInit {
     // todo make up for skipped pixels
 
     let offsets = this.canvas.getBoundingClientRect();
-    let x = (isTouch ? event['touches'][0].pageX : event.x) - offsets.left;
-    let y = (isTouch ? event['touches'][0].pageY : event.x) - offsets.top;
+    let x = (isTouch ? event['touches'][0].pageX : event.pageX) - (offsets.left + window.scrollX);
+    let y = (isTouch ? event['touches'][0].pageY : event.pageY) - (offsets.top + window.scrollY);
     if(x > 0 && x < this.canvas.width &&
        y > 0 && y < this.canvas.height) {
       let stroke = <IPaintStroke> {

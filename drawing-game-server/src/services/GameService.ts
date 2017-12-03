@@ -7,7 +7,7 @@ const TokenGenerator = require('uuid-token-generator');
 
 export const gameService = new class GameService {
 
-    private INK_PER_ROUND = 300;
+    private INK_PER_ROUND = 150;
 
     public players: IPlayer[] = [];
     private tokenGenerator: any;
@@ -16,7 +16,7 @@ export const gameService = new class GameService {
 
 
     private words = [
-        "wortel", "kaas", "Spinnewiel", "heksenkaas"
+        "Coole piet (Diego)", "Katarina", "Stefan", "Piemelfort", "K-pop", "Aardbeienjam"
     ];
 
     constructor() {
