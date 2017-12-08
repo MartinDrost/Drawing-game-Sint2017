@@ -66,7 +66,7 @@ export class DrawingCanvasComponent implements OnInit {
   @HostListener('mousemove', ['$event'])
   private addStroke(event: MouseEvent): void {
     let isTouch = event.type == "touchmove";
-    if(!isTouch && (this.gameState.player.token != this.gameService.getSession().token || event.which != 1)) {
+    if(this.gameState.player.token != this.gameService.getSession().token || (!isTouch && event.which != 1)) {
       return;
     }
     event.preventDefault();

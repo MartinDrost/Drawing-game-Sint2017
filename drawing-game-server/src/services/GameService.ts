@@ -7,7 +7,7 @@ const TokenGenerator = require('uuid-token-generator');
 
 export const gameService = new class GameService {
 
-    private INK_PER_ROUND = 150;
+    private INK_PER_ROUND = 100;
 
     public players: IPlayer[] = [];
     private tokenGenerator: any;
@@ -36,7 +36,7 @@ export const gameService = new class GameService {
             player.token = this.tokenGenerator.generate();
             this.players.push(player);
 
-            if(this.players.length == 1) {
+            if(this.getArtists().length == 1) {
                 this.nextRound(false);
             }
 
@@ -98,7 +98,7 @@ export const gameService = new class GameService {
         };
 
         if(this.gameState == null){
-            newState.player = this.players[0];
+            newState.player = this.getArtists()[0];
             newState.word = this.words[0];
         } else if(nextWord) {
             for(let i = 0; i < this.words.length; i++) {
