@@ -14,9 +14,15 @@ export const gameService = new class GameService {
 
     public gameState: IGameState;
 
-
     private words = [
-        "Coole piet (Diego)", "Katarina", "Stefan", "Piemelfort", "K-pop", "Aardbeienjam"
+        "Sinterklaas",
+        "Pepernoten",
+        "Coole piet (Diego)",
+        "Katarina",
+        "Stefan",
+        "Piemelfort",
+        "K-pop",
+        "Aardbeienjam"
     ];
 
     constructor() {

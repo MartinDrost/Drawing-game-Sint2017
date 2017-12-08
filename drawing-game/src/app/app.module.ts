@@ -19,6 +19,7 @@ import {SocketService} from "./services/socket.service";
 import { DrawingCanvasComponent } from './components/drawing-canvas/drawing-canvas.component';
 import { DrawPageComponent } from './pages/draw-page/draw-page.component';
 import {AuthenticatedGuard} from "./guards/authenticated.guard";
+import { ScreensaverPageComponent } from './pages/screensaver-page/screensaver-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {AuthenticatedGuard} from "./guards/authenticated.guard";
     ArtistPageComponent,
     SpectatorPageComponent,
     DrawingCanvasComponent,
-    DrawPageComponent
+    DrawPageComponent,
+    ScreensaverPageComponent
   ],
   imports: [
     BrowserModule,
