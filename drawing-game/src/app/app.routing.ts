@@ -4,6 +4,7 @@ import {ArtistPageComponent} from "./pages/artist-page/artist-page.component";
 import {SpectatorPageComponent} from "./pages/spectator-page/spectator-page.component";
 import {DrawPageComponent} from "./pages/draw-page/draw-page.component";
 import {AuthenticatedGuard} from "./guards/authenticated.guard";
+import {ScreensaverPageComponent} from "./pages/screensaver-page/screensaver-page.component";
 
 export const appRoutes: Routes = [
   {
@@ -15,6 +16,10 @@ export const appRoutes: Routes = [
     path: 'draw',
     component: DrawPageComponent,
     canActivate: [AuthenticatedGuard]
+  },
+  {
+    path: 'saver',
+    component: ScreensaverPageComponent
   }
 ];
 

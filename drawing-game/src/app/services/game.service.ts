@@ -7,6 +7,8 @@ import {SocketService} from "./socket.service";
 
 @Injectable()
 export class GameService {
+  private session: any;
+
   private endpoints = {
     joinGame: environment.api + "/game/join"
   };
@@ -42,18 +44,17 @@ export class GameService {
    * @param player
    */
   public setSession(player: IPlayer): void {
-    localStorage.setItem("session", JSON.stringify(player));
+    this.session = player;
     this.socketService.register(player.token);
   }
 
   public removeSession(): void {
-    localStorage.removeItem("session");
+    this.session = null;
   }
 
   public validateSession(): boolean {
-    let session = this.getSession();
-    if(session != null) {
-      this.socketService.register(session.token);
+    if(this.session != null) {
+      this.socketService.register(this.session.token);
       return true;
     }
 
@@ -65,6 +66,6 @@ export class GameService {
    * @returns {IPlayer}
    */
   public getSession(): IPlayer {
-    return <IPlayer>JSON.parse(localStorage.getItem("session"));
+    return this.session;
   }
 }

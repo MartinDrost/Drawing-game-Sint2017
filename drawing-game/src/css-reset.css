@@ -49,12 +49,4 @@ table {
 }
 
 /* You can add global styles to this file, and also import other style files */
-@keyframes looping-background {
-  0%   { background-position: 0 0; }
-  100% { background-position: 100vw 0; }
-}
-body {
-  background: url("./assets/images/Sports.png");
-  background-size: 20vw auto;
-  animation: looping-background 120s infinite linear;
-}
+
